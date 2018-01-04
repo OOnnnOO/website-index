@@ -29,12 +29,12 @@
       max-width: 660px;
       border: solid 1px #fefefe;
       position: absolute;
-      top: 50%;
+      top: 20%;
       left: 50%;
-      transform: translateX(-50%) translateY(-50%);
+      transform: translateX(-50%);
       background: rgba(0, 0, 0, .3);
-      /*padding: 10px;*/
       padding: .625rem;
+      transition: height 0.4s linear;
     }
 
     .container header {
@@ -42,9 +42,19 @@
     }
 
     .container footer {
-      border-top: solid 1px #EEEEEE;
-      padding-top: 2em;
+      padding-top: 1em;
       text-align: center;
+      color: #ccc;
+    }
+
+    .container a {
+      text-decoration: none;
+      color: #fff
+    }
+
+    .container a:hover {
+      color: #333;
+      background: rgba(153, 153, 153, .8)
     }
 
     .container h1 {
@@ -61,60 +71,68 @@
 
     .container nav ul {
       position: relative;
-      text-align: center;
-      background: rgba(134, 134, 134, .8);
       margin-bottom: 10px;
     }
 
-    .container nav ul:nth-last-child(1) {
-      text-align: center;
-      background: rgba(179, 179, 179, .8);
-      margin-bottom: 0;
-      transition: height 0.8s;
-      height: 0;
+    .link-list{
+      background: rgba(134, 134, 134, .8);
     }
 
-    .container nav ul:nth-last-child(1) a{
-      opacity: 0;
-      padding-top: 0;
-      transition: opacity 0.4s linear, padding-top 0.4s linear ;
-    }
-
-    .container ul li {
+    .link-list li {
       float: left;
-      width: 4.65625rem;
+      margin: 0;
+      line-height: 3em;
+      height: 3em;
     }
 
-    .container ul li a {
+    .link-list li a{
       display: block;
-      padding: 1em 0;
+      height: 100%;
+      padding: 0em 0.5em;
+    }
+
+    .article-list li{
       line-height: 1em;
-      /*width: 74.5px;*/
-      width: 4.65625rem;
     }
 
-    .container ul img {
+    .article-list{
+      background: rgba(179, 179, 179, .9);
+      height: 0;
+      opacity: 0;
+      transition: height 0.4s linear,opacity 0.4s linear ;
+    }
+
+    .article-list h2{
+      padding: 0.5rem 18px 0;
+    }
+
+    .article-list li a{
       display: block;
-      padding: 1rem;
-      width: 3rem;
+      padding: 1em 18px;
+    }
+
+    .unfold{
       position: absolute;
       right: 0;
       top: 0;
+      bottom: 0;
     }
 
-    .container a {
-      text-decoration: none;
-      color: #fff
+    .unfold a{
+      display: block;
+      height: 100%;
     }
 
-    .container a:hover {
-      color: #333;
-      background: rgba(153, 153, 153, .8)
+    .unfold img{
+      padding: 1rem;
+      width: 3rem;
     }
 
-
-
-
+    @media screen and (max-width: 769px){
+      .link-list li {
+        width: 50%;
+      }
+    }
 
   </style>
   <!-- 统计 -->
@@ -144,42 +162,76 @@
     <p>Lidong's Personal Website</p>
   </header>
   <hr>
-  <nav>
-    <ul class="clearfix">
-      <li><a href="https://lidong.me/blog/"> 📜 Blog</a></li>
-      <!--<li><a href="https://lidong.me/wiki/"> 🗄 Wiki</a></li>-->
-      <li><a href="./about.html"> 📌 About</a></li>
-      <div id="unfold"><img
-       src="data:image/png;base64,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"
-        alt="展开"></div>
-    </ul>
+  <div>
+    <nav class="link-list">
+      <ul class="clearfix ">
+        <li><a href="https://wordpress.oonnnoo.com/" title="Newer Blog"> 📜 Wordpress</a></li>
+        <li><a href="https://file.lidong.me/" title="file storage"> 📂 File </a></li>
+        <li><a href="https://lidong.me/blog/" title="old blog"> 📑 Blog </a></li>
+        <li><a href="https://start.oonnnoo.com/" title="person navigation"> 📡 More </a></li>
+        <!-- <li><a href="https://blog.lidong.me/"> 📑 OldB </a></li> -->
+        <li><a href="./about.html"> 📌 About</a></li>
+        <div id="unfold" class="unfold">
+          <a href="#">
+            <img
+            src="data:image/png;base64,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"
+            alt="展开">
+          </a>
+        </div>
+      </ul>
+    </nav>
 
-    <ul class="clearfix" id="moreLink">
-      <li><a href="https://file.lidong.me/">File</a></li>
-       <li><a href="https://labs.lidong.me/"> Labs</a></li>
-      <li><a href="https://blog.lidong.me/"> OldB</a></li>
-       <li><a href="https://notes.lidong.me/">OldN</a></li>
-    </ul>
-  </nav>
-  <footer><a href="https://lidong.me/#">CONTACT</a> © <a href="https://lidong.me/#">LIDONG.ME</a></footer>
+    <div id="moreLink" class="article-list">
+      <h2 style="color:#fff;">查看最新文章</h2>
+      <ul class="clearfix" id="article-list">
+          <li><a class="text-truncate" href="https://wordpress.oonnnoo.com/2018/bitcoin/">关于比特币关于比特币关于比特币关于比特币关于比特币关于比特币关于比特币关于比特币关于比特币</a></li>
+          <li><a class="text-truncate" href="https://wordpress.oonnnoo.com/2018/install-wordpress-with-docker/">使用Docker安装WordPress</a></li>
+        </ul>
+    </div>
+  </div>
+  <hr>
+  <footer><a href="#!">CONTACT</a> ©2012 - 2018 <a href="#!">LIDONG.ME</a></footer>
 </div>
 <script>
+function unfold(){
+  // 显示与隐藏文章
   var unfold = document.getElementById('unfold');
   var moreLink = document.getElementById('moreLink');
-  var moreLinkLi = moreLink.getElementsByTagName('a');
   var display = false;
   unfold.onclick = function () {
     display = !display;
-    moreLink.style.height = display ? "48px" : "0px";
-    moreLink.style.marginBottom = display ? "10px" : "0px";
-
-    for (var i = 0; i < moreLinkLi.length; i++) {
-      moreLinkLi[i].style.opacity = display ? '1' : '0';
-      moreLinkLi[i].style.paddingTop = display ? '1em' : '0';
-    }
+    moreLink.style.height = display ? "auto" : "0px";
+    moreLink.style.opacity = display ? "1" : "0";
     return false;
   };
+}
 
+// 获取最新文章列表
+function getNewPost(){
+  var html =''
+  var xhr = new XMLHttpRequest()
+  xhr.onreadystatechange =function(event){
+    if(xhr.readyState === 4){
+      if(xhr.status === 200){
+        var res = xhr.responseXML
+        var title  = res.getElementsByTagName('title')
+        var link  = res.getElementsByTagName('link')
+        for(var i =1; i<title.length; i++){
+          html += '<li><a class="text-truncate" href="'+link[i].childNodes[0].nodeValue+'">' + title[i].childNodes[0].nodeValue +'</a></li>'
+        }
+
+        document.getElementById('article-list').innerHTML = html
+      }
+    }
+  }
+  xhr.open('GET','https://wordpress.oonnnoo.com/feed/',true);
+  xhr.send()
+}
+
+window.onload = function(){
+  unfold();
+  getNewPost();
+}
 </script>
 </body>
 
