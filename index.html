@@ -12,7 +12,7 @@
     body {
       height: 100%;
       width: 100%;
-      background: #b8ac94 url("https://static.lidong.me/img/2017/03/roman-logov-100555.jpg");
+      background: #b8ac94 url("https://static.lidong.me/img/2017/03/roman-logov-100555.jpg") no-repeat fixed center;
       background-size: cover;
     }
 
@@ -23,7 +23,7 @@
     }
 
     .container {
-      margin: 0 auto;
+      margin: 20px auto;
       width: 80%;
       min-width: 320px;
       max-width: 660px;
@@ -93,6 +93,7 @@
 
     .article-list li{
       line-height: 1em;
+      height: 0;
     }
 
     .article-list{
@@ -182,7 +183,7 @@
     </nav>
 
     <div id="moreLink" class="article-list">
-      <h2 style="color:#fff;">查看最新文章</h2>
+      <h2 style="color:#fff;height:0;">查看最新文章</h2>
       <ul class="clearfix" id="article-list">
           <li><a class="text-truncate" href="https://lidong.me/wordpress/2018/bitcoin/">关于比特币关于比特币关于比特币关于比特币关于比特币关于比特币关于比特币关于比特币关于比特币</a></li>
           <li><a class="text-truncate" href="https://lidong.me/wordpress/2018/install-wordpress-with-docker/">使用Docker安装WordPress</a></li>
@@ -197,11 +198,22 @@ function unfold(){
   // 显示与隐藏文章
   var unfold = document.getElementById('unfold');
   var moreLink = document.getElementById('moreLink');
+  var h2 = moreLink.getElementsByTagName('h2')
+  var moreLinkLi = moreLink.getElementsByTagName('li')
+  console.log(moreLinkLi)
   var display = false;
   unfold.onclick = function () {
     display = !display;
-    moreLink.style.height = display ? "auto" : "0px";
+    moreLink.style.height = display ? "auto" : "0";
     moreLink.style.opacity = display ? "1" : "0";
+    for(var i = 0;i<h2.length;i++){
+      h2[i].style.height = display ? "auto" : "0";
+    }
+
+    for(var i = 0;i<moreLinkLi.length;i++){
+      moreLinkLi[i].style.height = display ? "auto" : "0";
+    }
+
     return false;
   };
 }
