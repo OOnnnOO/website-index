@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>李冬的个人网站</title>
+  <title>李冬的个人网站 | Lidong's Personal Website</title>
   <link rel="stylesheet" href="https://static.lidong.me/css/base.min.css?v=532f3065b9">
   <style type="text/css">
     html,
@@ -227,16 +227,18 @@ function getNewPost(){
       if(xhr.status === 200){
         var res = xhr.responseXML
         var title  = res.getElementsByTagName('title')
-        var link  = res.getElementsByTagName('link')
-        for(var i =1; i<title.length; i++){
-          html += '<li><a class="text-truncate" href="'+link[i].childNodes[0].nodeValue+'">' + title[i].childNodes[0].nodeValue +'</a></li>'
+        var link  = res.getElementsByTagName('entry')[0].getElementsByTagName('link')
+        var len = title.length <= 6 ? title.length: 6
+
+        for(var i =1; i<len; i++){
+          html += '<li><a class="text-truncate" href="'+link[0].attributes['href'].value+'">' + title[i].childNodes[0].nodeValue +'</a></li>'
         }
 
         document.getElementById('article-list').innerHTML = html
       }
     }
   }
-  xhr.open('GET','https://lidong.me/wordpress/feed/',true);
+  xhr.open('GET','https://lidong.me/blog/atom.xml',true);
   xhr.send()
 }
 
