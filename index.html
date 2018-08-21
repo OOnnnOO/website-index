@@ -228,11 +228,14 @@ function getNewPost(){
       if(xhr.status === 200){
         var res = xhr.responseXML
         var title  = res.getElementsByTagName('title')
-        var link  = res.getElementsByTagName('entry')[0].getElementsByTagName('link')
+        var entry  = res.getElementsByTagName('entry')
         var len = title.length <= 6 ? title.length: 6
 
         for(var i =1; i<len; i++){
-          html += '<li><a class="text-truncate" href="'+link[0].attributes['href'].value+'">' + title[i].childNodes[0].nodeValue +'</a></li>'
+          html += '<li>'
+          + '<a class="text-truncate" href="'+ entry[i].getElementsByTagName('link')[0].attributes['href'].value+'">'
+          + title[i].childNodes[0].nodeValue
+          + '</a></li>'
         }
 
         document.getElementById('article-list').innerHTML = html
