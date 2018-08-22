@@ -1,4 +1,3 @@
 User-agent: *
 Disallow: /example/
-Disallow: /blog/tags/
 Disallow: /blog/archives/
