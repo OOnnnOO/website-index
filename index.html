@@ -186,8 +186,7 @@
     <div id="moreLink" class="article-list">
       <h2 style="color:#fff;height:0;">查看最新文章</h2>
       <ul class="clearfix" id="article-list">
-          <li><a class="text-truncate" href="https://lidong.me/wordpress/2018/bitcoin/">关于比特币关于比特币关于比特币关于比特币关于比特币关于比特币关于比特币关于比特币关于比特币</a></li>
-          <li><a class="text-truncate" href="https://lidong.me/wordpress/2018/install-wordpress-with-docker/">使用Docker安装WordPress</a></li>
+          <li><a class="text-truncate" href="https://lidong.me/blog/start/">start</a></li>
         </ul>
     </div>
   </div>
@@ -231,10 +230,10 @@ function getNewPost(){
         var entry  = res.getElementsByTagName('entry')
         var len = title.length <= 6 ? title.length: 6
 
-        for(var i =1; i<len; i++){
+        for(var i = 0; i<len; i++){
           html += '<li>'
           + '<a class="text-truncate" href="'+ entry[i].getElementsByTagName('link')[0].attributes['href'].value+'">'
-          + title[i].childNodes[0].nodeValue
+          + title[i+1].childNodes[0].nodeValue
           + '</a></li>'
         }
 
