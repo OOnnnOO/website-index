@@ -187,13 +187,13 @@
   <div>
     <nav class="link-list">
       <ul class="clearfix ">
-        <li><a href="https://lidong.me/wordpress/" title="Newer Blog"> 📜 Wordpress</a></li>
-        <li><a href="https://lidong.me/blog/" title="old blog"> 📑 Blog </a></li>
-        <li><a href="https://file.lidong.me/" title="file storage"> 📂 File </a></li>
-        <li><a href="https://lidong.me/list.html" title="person navigation"> 🔎 List </a></li>
-        <li><a href="https://start.oonnnoo.com/" title="person navigation"> 📡 More </a></li>
+        <li><a href="https://lidong.me/blog/" title="my blog" target="_blank"> 📑 Blog </a></li>
+        <li><a href="https://lidong.me/wordpress/" title="It's a playground" target="_blank"> 📜 WordPress</a></li>
+        <li><a href="https://file.lidong.me/" title="file storage" target="_blank"> 📂 File </a></li>
+        <li><a href="https://lidong.me/list.html" title="personal list" target="_blank"> 🔎 List </a></li>
+        <li><a href="https://start.oonnnoo.com/" title="personal navigation" target="_blank"> 📡 More </a></li>
         <!-- <li><a href="https://blog.lidong.me/"> 📑 OldB </a></li> -->
-        <li><a href="./about.html"> 📌 About</a></li>
+        <li><a href="./about.html" title="It's me" target="_blank"> 📌 About</a></li>
         <div id="unfold" class="unfold">
           <a href="#">
             <img
@@ -207,7 +207,7 @@
     <div id="moreLink" class="article-list">
       <h2 style="color:#fff;height:0;">查看最新文章</h2>
       <ul class="clearfix" id="article-list">
-          <li><a class="text-truncate" href="https://lidong.me/blog/start/">start</a></li>
+          <li><a class="text-truncate" href="https://lidong.me/blog/start/" target="_blank">start</a></li>
         </ul>
     </div>
   </div>
@@ -253,7 +253,7 @@ function getNewPost(){
 
         for(var i = 0; i<len; i++){
           html += '<li>'
-          + '<a class="text-truncate" href="'+ entry[i].getElementsByTagName('link')[0].attributes['href'].value+'">'
+          + '<a class="text-truncate" href="'+ entry[i].getElementsByTagName('link')[0].attributes['href'].value+'" target="_blank">'
           + title[i+1].childNodes[0].nodeValue
           + '</a></li>'
         }
