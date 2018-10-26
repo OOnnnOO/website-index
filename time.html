@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>世界时间</title>
+</head>
+
+<body>
+  <div>
+    <div>本机时间：<span id="localTime"></span></div>
+    <div>UTC时间：<span id="localUTCTime"></span></div>
+    <div>服务器时间：<span id="serverLocalTime"></span></div>
+    <div>服务器UTC时间：<span id="serverUTCTime"></span></div>
+  </div>
+  <script>
+    var date = new Date()
+    var now = new Date(Date.parse(date)).toString()
+    var utcnow = new Date(Date.parse(date)).toUTCString()
+    document.getElementById('localTime').innerText = now
+    document.getElementById('localUTCTime').innerText = utcnow
+
+    // 获取服务器时间
+    var xhr = new XMLHttpRequest()
+    xhr.onreadystatechange = function (event) {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        var serverTime = xhr.getResponseHeader('Date')
+        var serverUTCTime = new Date(Date.parse(serverTime)).toUTCString()
+        var serverLocalTime = new Date(Date.parse(serverTime)).toString()
+        document.getElementById('serverUTCTime').innerText = serverUTCTime
+        document.getElementById('serverLocalTime').innerText = serverLocalTime
+      }
+    }
+    xhr.open('GET', '/')
+    xhr.send()
+
+  </script>
+
+</body>
+
+</html>
