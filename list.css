@@ -1,0 +1,386 @@
+/*! CSS Used from: https://github.githubassets.com/assets/frameworks-911c0a12b70ded25a66d3432705a7c0f.css ; media=all */
+
+.octicon {
+  display: inline-block;
+  fill: currentColor;
+
+  vertical-align: text-bottom;
+}
+.user-select-contain {
+  -moz-user-select: contain;
+  -ms-user-select: element;
+  -ms-user-select: contain;
+  -webkit-user-select: contain;
+  user-select: contain;
+}
+article {
+  display: block;
+}
+a {
+  background-color: transparent;
+  color: #0366d6;
+  text-decoration: none;
+}
+a:active,
+a:hover {
+  outline-width: 0;
+}
+strong {
+  font-weight: inherit;
+  font-weight: bolder;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+::-webkit-input-placeholder {
+  color: inherit;
+  opacity: 0.54;
+}
+* {
+  box-sizing: border-box;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1,
+h2 {
+  margin-bottom: 0;
+  margin-top: 0;
+  font-weight: 600;
+}
+h1 {
+  font-size: 32px;
+  margin: 0.67em 0;
+}
+
+h2 {
+  font-size: 24px;
+}
+ul {
+  margin-bottom: 0;
+  margin-top: 0;
+  padding-left: 0;
+}
+
+.btn {
+  -moz-appearance: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-appearance: none;
+  -webkit-user-select: none;
+  appearance: none;
+  background-position: -1px -1px;
+  background-repeat: repeat-x;
+  background-size: 110% 110%;
+  border: 1px solid rgba(27, 31, 35, 0.2);
+  border-radius: 0.25em;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 6px 12px;
+  position: relative;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.btn:hover {
+  background-repeat: repeat-x;
+  text-decoration: none;
+}
+.btn:focus {
+  outline: 0;
+}
+.btn:disabled {
+  background-position: 0 0;
+  cursor: default;
+}
+.btn:active {
+  background-image: none;
+}
+.btn {
+  background-color: #eff3f6;
+  background-image: linear-gradient(-180deg, #fafbfc, #eff3f6 90%);
+  color: #24292e;
+}
+.btn:focus {
+  box-shadow: 0 0 0 0.2em rgba(3, 102, 214, 0.3);
+}
+.btn:hover {
+  background-color: #e6ebf1;
+  background-image: linear-gradient(-180deg, #f0f3f6, #e6ebf1 90%);
+  background-position: -0.5em;
+  border-color: rgba(27, 31, 35, 0.35);
+}
+.btn:active {
+  background-color: #e9ecef;
+  background-image: none;
+  border-color: rgba(27, 31, 35, 0.35);
+  box-shadow: inset 0 0.15em 0.3em rgba(27, 31, 35, 0.15);
+}
+.btn:disabled {
+  background-color: #eff3f6;
+  background-image: none;
+  border-color: rgba(27, 31, 35, 0.2);
+  box-shadow: none;
+  color: rgba(36, 41, 46, 0.4);
+}
+.btn-sm {
+  font-size: 12px;
+  line-height: 20px;
+  padding: 3px 10px;
+}
+:-ms-input-placeholder {
+  color: #6a737d;
+}
+::-ms-input-placeholder {
+  color: #6a737d;
+}
+::placeholder {
+  color: #6a737d;
+}
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 980px;
+}
+.container:before {
+  content: "";
+  display: table;
+}
+.container:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+.tooltipped {
+  position: relative;
+}
+.tooltipped:after {
+  -webkit-font-smoothing: subpixel-antialiased;
+  background: #1b1f23;
+  border-radius: 3px;
+  color: #fff;
+  content: attr(aria-label);
+  display: none;
+  font: normal normal 11px/1.5 -apple-system, BlinkMacSystemFont, Segoe UI,
+    Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji,
+    Segoe UI Symbol;
+  letter-spacing: normal;
+  opacity: 0;
+  padding: 0.5em 0.75em;
+  pointer-events: none;
+  position: absolute;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  white-space: pre;
+  word-wrap: break-word;
+  z-index: 1000000;
+}
+.tooltipped:before {
+  border: 6px solid transparent;
+  color: #1b1f23;
+  content: "";
+  display: none;
+  height: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  width: 0;
+  z-index: 1000001;
+}
+.tooltipped:active:after,
+.tooltipped:active:before,
+.tooltipped:focus:after,
+.tooltipped:focus:before,
+.tooltipped:hover:after,
+.tooltipped:hover:before {
+  animation-delay: 0.4s;
+  animation-duration: 0.1s;
+  animation-fill-mode: forwards;
+  animation-name: tooltip-appear;
+  animation-timing-function: ease-in;
+  display: inline-block;
+  text-decoration: none;
+}
+.tooltipped-s:after {
+  margin-top: 6px;
+  right: 50%;
+  top: 100%;
+}
+.tooltipped-s:before {
+  border-bottom-color: #1b1f23;
+  bottom: -7px;
+  margin-right: -6px;
+  right: 50%;
+  top: auto;
+}
+.tooltipped-s:after {
+  transform: translateX(50%);
+}
+.css-truncate .css-truncate-target {
+  display: inline-block;
+  max-width: 125px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+/*! CSS Used from: https://github.githubassets.com/assets/github-2dc811e816dd04b6ce1cd3e240cb8c68.css ; media=all */
+
+.markdown-body {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
+    sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  font-size: 16px;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+.markdown-body:before {
+  content: "";
+  display: table;
+}
+.markdown-body:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+.markdown-body > :first-child {
+  margin-top: 0 !important;
+}
+.markdown-body > :last-child {
+  margin-bottom: 0 !important;
+}
+.markdown-body .anchor {
+  float: left;
+  line-height: 1;
+  margin-left: -20px;
+  padding-right: 4px;
+}
+.markdown-body .anchor:focus {
+  outline: none;
+}
+.markdown-body ul {
+  margin-bottom: 16px;
+  margin-top: 0;
+}
+.markdown-body h1,
+.markdown-body h2 {
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: 16px;
+  margin-top: 24px;
+}
+.markdown-body h1 .octicon-link,
+.markdown-body h2 .octicon-link {
+  color: #1b1f23;
+  vertical-align: middle;
+  visibility: hidden;
+}
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor {
+  text-decoration: none;
+}
+.markdown-body h1:hover .anchor .octicon-link,
+.markdown-body h2:hover .anchor .octicon-link {
+  visibility: visible;
+}
+.markdown-body h1 {
+  font-size: 2em;
+}
+.markdown-body h1,
+.markdown-body h2 {
+  border-bottom: 1px solid #eaecef;
+  padding-bottom: 0.3em;
+}
+.markdown-body h2 {
+  font-size: 1.5em;
+}
+.markdown-body ul {
+  padding-left: 2em;
+}
+.markdown-body ul ul {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+.markdown-body li {
+  word-wrap: break-all;
+}
+.markdown-body li + li {
+  margin-top: 0.25em;
+}
+.file {
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  margin-bottom: 16px;
+  margin-top: 16px;
+  position: relative;
+  z-index: 1;
+}
+.file-header {
+  background-color: #fafbfc;
+  border-bottom: 1px solid #e1e4e8;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  padding: 5px 10px;
+}
+.file-header:before {
+  content: "";
+  display: table;
+}
+.file-header:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+.file-actions {
+  float: right;
+  font-size: 13px;
+  padding-top: 2px;
+}
+.file-info {
+  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier,
+    monospace;
+  font-size: 12px;
+  line-height: 32px;
+}
+.file-info .octicon {
+  vertical-align: text-bottom;
+}
+
+.readme .markdown-body {
+  word-wrap: break-word;
+}
+.file .readme .markdown-body {
+  border: 0;
+  border-radius: 0;
+  padding: 45px;
+}
+
+@media print {
+  .file-actions {
+    display: none !important;
+  }
+  .btn:not(.btn-outline) {
+    background: none;
+    color: #24292e !important;
+  }
+  .markdown-body h2 {
+    page-break-after: avoid;
+  }
+}
+/*! CSS Used keyframes */
+@keyframes tooltip-appear {
+  0% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
