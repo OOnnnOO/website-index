@@ -1,0 +1,75 @@
+{
+  "dir": "ltr",
+  "lang": "zh-CN",
+  "name": "李冬的个人网站 | Lidong's Personal Website",
+  "scope": "/",
+  "display": "standalone",
+  "start_url": "https://lidong.me/",
+  "short_name": "李冬的个人网站",
+  "theme_color": "transparent",
+  "orientation": "natural",
+  "background_color": "transparent",
+  "generated": "true",
+  "icons": [
+    {
+      "src": "https://lidong.me/icon/favicon-16x16.png",
+      "sizes": "16x16"
+    },
+    {
+      "src": "https://lidong.me/icon/favicon-32x32.png",
+      "sizes": "32x32"
+    },
+    {
+      "src": "https://lidong.me/icon/favicon-36x36.png",
+      "sizes": "36x36"
+    },
+    {
+      "src": "https://lidong.me/icon/favicon-48x48.png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "https://lidong.me/icon/favicon-57x57.png",
+      "sizes": "57x57"
+    },
+    {
+      "src": "https://lidong.me/icon/favicon-72x72.png",
+      "sizes": "72x72"
+    },
+    {
+      "src": "https://lidong.me/icon/favicon-76x76.png",
+      "sizes": "76x76"
+    },
+    {
+      "src": "https://lidong.me/icon/favicon-96x96.png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "https://lidong.me/icon/favicon-120x120.png",
+      "sizes": "120x120"
+    },
+    {
+      "src": "https://lidong.me/icon/favicon-144x144.png",
+      "sizes": "144x144"
+    },
+    {
+      "src": "https://lidong.me/icon/favicon-180x180.png",
+      "sizes": "180x180"
+    },
+    {
+      "src": "https://lidong.me/icon/favicon-192x192.png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "https://lidong.me/icon/favicon-256x256.png",
+      "sizes": "256x256"
+    },
+    {
+      "src": "https://lidong.me/icon/favicon-512x512.png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "https://lidong.me/icon/favicon-1024x1024.png",
+      "sizes": "1024x1024"
+    }
+  ]
+}
